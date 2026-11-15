@@ -1,0 +1,37 @@
+[
+  {
+    "id": 101,
+    "name": "Ceviche de Palmito",
+    "description": "Palmito pupunha marinado em limão, leite de coco, coentro e pimenta rosa. Acompanha chips de mandioquinha.",
+    "price": 32.90,
+    "category": "Entradas"
+  },
+  {
+    "id": 102,
+    "name": "Moqueca de Banana da Terra",
+    "description": "Banana da terra cozida no azeite de dendê, leite de coco, tomate, pimentão e coentro. Servida com arroz e pirão de mandioca.",
+    "price": 48.90,
+    "category": "Pratos Principais"
+  },
+  {
+    "id": 103,
+    "name": "Risoto de Cogumelos e Alecrim",
+    "description": "Arroz arbóreo cremoso com mix de cogumelos frescos, finalizado com alecrim e lascas de castanha-de-caju.",
+    "price": 44.90,
+    "category": "Pratos Principais"
+  },
+  {
+    "id": 104,
+    "name": "Torta de Limão com Merengue de Aquafaba",
+    "description": "Base crocante, recheio cremoso de limão e merengue leve feito com aquafaba.",
+    "price": 18.90,
+    "category": "Sobremesas"
+  },
+  {
+    "id": 105,
+    "name": "Suco Detox Verde",
+    "description": "Couve, gengibre, limão, maçã e hortelã. Sem adição de açúcar.",
+    "price": 12.00,
+    "category": "Bebidas"
+  }
+]

@@ -1,0 +1,110 @@
+/* Mobile-First: Formulário de Adicionar Restaurante Flexível */
+.restaurant-form {
+  background-color: #ffffff;
+  border-radius: var(--radius-xl, 24px);
+  box-shadow: var(--shadow-lg);
+  padding: clamp(16px, 3vw, 24px);
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-sizing: border-box;
+}
+
+.form-title {
+  margin: 0;
+  font-size: var(--font-lg);
+  font-weight: 700;
+  color: var(--cor-texto);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.form-group label {
+  font-size: var(--font-sm);
+  font-weight: 600;
+  color: #374151;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  min-height: 42px;
+  padding: 10px 14px;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--radius-md);
+  font-size: var(--font-base);
+  color: var(--cor-texto);
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--cor-primaria);
+  box-shadow: 0 0 0 3px rgba(14, 111, 51, 0.15);
+}
+
+.form-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 0;
+}
+
+.form-checkbox input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--cor-primaria);
+  cursor: pointer;
+}
+
+.form-checkbox label {
+  font-size: var(--font-base);
+  font-weight: 600;
+  color: var(--cor-texto);
+  cursor: pointer;
+}
+
+.submit-btn {
+  margin-top: 4px;
+  padding: 12px 18px;
+  min-height: 44px;
+  border: none;
+  border-radius: var(--radius-pill);
+  background-color: var(--cor-primaria);
+  color: #ffffff;
+  font-size: var(--font-base);
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(14, 111, 51, 0.2);
+  transition: background-color 0.2s ease, transform 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.submit-btn:hover {
+  background-color: var(--cor-primaria-hover);
+  transform: translateY(-2px);
+}
+
+/* Media Queries progressivas (Mobile-First) */
+@media (min-width: 640px) {
+  .restaurant-form {
+    max-width: 520px;
+    padding: 28px;
+  }
+}

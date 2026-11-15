@@ -1,0 +1,59 @@
+/* ─── Botão de alternância de tema ─────────────────────────────── */
+.theme-toggle {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--radius-pill);
+  background-color: var(--cor-card);
+  cursor: pointer;
+  transition: background-color 0.25s ease, border-color 0.25s ease,
+    box-shadow 0.25s ease, transform 0.15s ease;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 0 3px rgba(14, 111, 51, 0.18);
+  border-color: var(--cor-primaria);
+}
+
+.theme-toggle:active {
+  transform: scale(0.95);
+}
+
+/* Os dois ícones ficam empilhados no centro; apenas um é visível de cada vez */
+.theme-icon {
+  position: absolute;
+  font-size: 1.15rem;
+  line-height: 1;
+  transition: opacity 0.25s ease, transform 0.35s ease;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ── Modo claro: mostra lua, esconde sol ── */
+.theme-toggle--light .theme-icon--moon {
+  opacity: 1;
+  transform: translateY(0) rotate(0deg);
+}
+
+.theme-toggle--light .theme-icon--sun {
+  opacity: 0;
+  transform: translateY(10px) rotate(90deg);
+}
+
+/* ── Modo escuro: mostra sol, esconde lua ── */
+.theme-toggle--dark .theme-icon--sun {
+  opacity: 1;
+  transform: translateY(0) rotate(0deg);
+}
+
+.theme-toggle--dark .theme-icon--moon {
+  opacity: 0;
+  transform: translateY(-10px) rotate(-90deg);
+}

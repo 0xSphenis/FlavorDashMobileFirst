@@ -1,0 +1,37 @@
+[
+  {
+    "id": 201,
+    "name": "Homus com Pão Sírio",
+    "description": "Pasta de grão-de-bico com tahine, limão e azeite. Acompanha pão sírio quentinho e azeitonas.",
+    "price": 24.90,
+    "category": "Entradas"
+  },
+  {
+    "id": 202,
+    "name": "Bowl Mediterrâneo",
+    "description": "Base de quinoa, mix de folhas, tomate-cereja, pepino, azeitonas, cebola roxa, homus e coalhada seca. Acompanha molho de ervas.",
+    "price": 39.90,
+    "category": "Pratos Principais"
+  },
+  {
+    "id": 203,
+    "name": "Moussaka de Berinjela",
+    "description": "Camadas de berinjela, molho de tomate e creme de castanhas. Gratinada. Servida com arroz integral.",
+    "price": 46.90,
+    "category": "Pratos Principais"
+  },
+  {
+    "id": 204,
+    "name": "Baklava",
+    "description": "Massa folhada recheada com nozes e pistache, banhada em calda de laranja e água de flor de laranjeira.",
+    "price": 16.90,
+    "category": "Sobremesas"
+  },
+  {
+    "id": 205,
+    "name": "Água Aromatizada com Pepino e Hortelã",
+    "description": "Água fresca com rodelas de pepino e folhas de hortelã.",
+    "price": 8.00,
+    "category": "Bebidas"
+  }
+]

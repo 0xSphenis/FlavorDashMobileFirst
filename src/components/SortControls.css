@@ -1,0 +1,117 @@
+/* Mobile-First: Controles de Ordenação Flexíveis */
+.sort-controls {
+  width: 100%;
+  max-width: 680px;
+  background-color: var(--cor-card);
+  padding: clamp(14px, 2.5vw, 20px);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sort-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+}
+
+.sort-label {
+  font-size: var(--font-sm);
+  font-weight: 700;
+  color: #374151;
+  min-width: 85px;
+  flex-shrink: 0;
+}
+
+.sort-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  width: 100%;
+}
+
+.sort-pill {
+  padding: 7px 14px;
+  min-height: 38px;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--radius-pill);
+  background-color: #f9fafb;
+  color: #374151;
+  font-size: var(--font-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  user-select: none;
+}
+
+.sort-pill:hover {
+  border-color: var(--cor-primaria);
+  color: var(--cor-primaria);
+}
+
+.sort-pill.active {
+  background-color: var(--cor-primaria);
+  border-color: var(--cor-primaria);
+  color: #ffffff;
+}
+
+.sort-indicator {
+  font-size: var(--font-xs);
+  font-weight: 700;
+}
+
+.sort-direction-btn {
+  width: 100%;
+  min-height: 40px;
+  padding: 8px 16px;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--radius-pill);
+  background-color: #ffffff;
+  color: #374151;
+  font-size: var(--font-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sort-direction-btn:hover {
+  border-color: var(--cor-primaria);
+  color: var(--cor-primaria);
+  background-color: var(--cor-primaria-light);
+}
+
+/* Media Queries progressivas (Mobile-First) */
+@media (min-width: 640px) {
+  .sort-controls {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .sort-group {
+    flex-direction: row;
+    align-items: center;
+    flex: 1;
+  }
+
+  .sort-options {
+    flex: 1;
+  }
+
+  .sort-direction-btn {
+    width: auto;
+    flex-shrink: 0;
+  }
+}

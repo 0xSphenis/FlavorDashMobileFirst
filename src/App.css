@@ -1,0 +1,69 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.main-content {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: clamp(16px, 3vw, 32px) clamp(12px, 3vw, 24px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  box-sizing: border-box;
+}
+
+.toggle-form-btn {
+  width: 100%;
+  max-width: 320px;
+  min-height: 44px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: var(--radius-pill);
+  background-color: var(--cor-primaria);
+  color: #ffffff;
+  font-size: var(--font-base);
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(14, 111, 51, 0.2);
+  transition: transform 0.15s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggle-form-btn:hover {
+  background-color: var(--cor-primaria-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(14, 111, 51, 0.28);
+}
+
+.toggle-form-btn.cancel {
+  background-color: #64748b;
+  box-shadow: 0 4px 12px rgba(100, 116, 139, 0.2);
+}
+
+.toggle-form-btn.cancel:hover {
+  background-color: #475569;
+}
+
+@media (min-width: 640px) {
+  .main-content {
+    gap: 20px;
+  }
+
+  .toggle-form-btn {
+    width: auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .main-content {
+    max-width: 1200px;
+    gap: 24px;
+  }
+}

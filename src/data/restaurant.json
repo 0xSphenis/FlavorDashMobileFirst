@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "name": "Verde Veg",
+    "cuisine": "Brasileira",
+    "isOpen": true,
+    "lastUpdate": "2026-03-28T10:30:00Z",
+    "description": "Comida caseira com ingredientes frescos e criatividade."
+  },
+  {
+    "id": 2,
+    "name": "Sabor Natural",
+    "cuisine": "Mediterrânea",
+    "isOpen": true,
+    "lastUpdate": "2026-03-28T11:15:00Z",
+    "description": "Aromas e sabores do Mediterrâneo em cada prato."
+  },
+  {
+    "id": 3,
+    "name": "Raízes",
+    "cuisine": "Asiática",
+    "isOpen": false,
+    "lastUpdate": "2026-03-27T18:45:00Z",
+    "description": "Fusão oriental com toque brasileiro."
+  },
+  {
+    "id": 4,
+    "name": "Horta Urbana",
+    "cuisine": "Saladas & Bowls",
+    "isOpen": true,
+    "lastUpdate": "2026-03-28T09:20:00Z",
+    "description": "Combinações nutritivas e coloridas."
+  }
+]

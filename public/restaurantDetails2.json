@@ -1,0 +1,10 @@
+{
+  "id": 2,
+  "name": "Sabor Natural",
+  "address": "Av. das Oliveiras, 456 - Jardim Europa",
+  "phone": "(11) 98765-4321",
+  "openingHours": "Segunda a Sábado, 12h às 23h",
+  "rating": 4.7,
+  "deliveryTime": "40-60 min",
+  "description": "Inspirado na dieta mediterrânea, o Sabor Natural oferece pratos leves e saborosos. Azeite, ervas frescas e grãos são a base de nossas preparações."
+}

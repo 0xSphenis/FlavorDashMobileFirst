@@ -1,0 +1,363 @@
+/* ============================================================
+   Navbar — Mobile-First
+   Contêiner flexível + Hamburger + Drawer + Dropdown desktop
+   ============================================================ */
+
+/* ─── Contêiner ─────────────────────────────────────────────── */
+.navbar {
+  width: 100%;
+  background-color: var(--cor-card);
+  border-top: 1px solid var(--cor-borda-suave);
+  position: relative;
+  z-index: 90;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.navbar-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 14px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-height: 48px;
+  box-sizing: border-box;
+}
+
+/* ─── Menu desktop (oculto por padrão — Mobile-First) ────────── */
+.navbar-desktop {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2px;
+  align-items: center;
+}
+
+/* ─── Item genérico da navbar ─────────────────────────────────── */
+.nav-item {
+  position: relative;
+}
+
+/* ─── Link/botão base ─────────────────────────────────────────── */
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 14px;
+  border: none;
+  background: none;
+  font-family: var(--font-family);
+  font-size: var(--font-sm);
+  font-weight: 600;
+  color: var(--cor-texto);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background-color 0.18s ease, color 0.18s ease;
+  white-space: nowrap;
+}
+
+.nav-link:hover,
+.nav-item.open > .nav-link {
+  background-color: var(--cor-primaria-light);
+  color: var(--cor-primaria);
+}
+
+/* ─── Chevron do dropdown ─────────────────────────────────────── */
+.dropdown-chevron {
+  font-size: 0.75rem;
+  transition: transform 0.22s ease;
+  display: inline-block;
+  line-height: 1;
+}
+
+.dropdown-chevron.rotated {
+  transform: rotate(-180deg);
+}
+
+/* ─── Painel dropdown ─────────────────────────────────────────── */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  min-width: 190px;
+  background-color: var(--cor-card);
+  border: 1px solid var(--cor-borda-suave);
+  border-radius: var(--radius-md);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  list-style: none;
+  padding: 6px 0;
+  margin: 0;
+  z-index: 200;
+  animation: dropdownFadeIn 0.18s ease;
+}
+
+.dropdown-menu--open {
+  display: block;
+}
+
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-link {
+  display: block;
+  padding: 9px 16px;
+  font-size: var(--font-sm);
+  font-weight: 500;
+  color: var(--cor-texto);
+  text-decoration: none;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.dropdown-link:hover {
+  background-color: var(--cor-primaria-light);
+  color: var(--cor-primaria);
+}
+
+/* ─── Botão Hambúrguer ────────────────────────────────────────── */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  transition: background-color 0.18s ease;
+  /* garante área de clique mínima de 44x44px */
+}
+
+.hamburger:hover {
+  background-color: var(--cor-primaria-light);
+}
+
+.hamburger-line {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--cor-texto);
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
+  transform-origin: center;
+}
+
+/* Animação X quando aberto */
+.hamburger--open .hamburger-line:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburger--open .hamburger-line:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.hamburger--open .hamburger-line:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ─── Overlay ─────────────────────────────────────────────────── */
+.drawer-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.45);
+  z-index: 150;
+  animation: overlayFadeIn 0.25s ease;
+}
+
+.drawer-overlay--visible {
+  display: block;
+}
+
+@keyframes overlayFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ─── Drawer lateral ──────────────────────────────────────────── */
+.mobile-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: min(80vw, 300px);
+  height: 100dvh;
+  background-color: var(--cor-card);
+  box-shadow: 4px 0 24px rgba(0, 0, 0, 0.18);
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 0.3s ease;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.mobile-drawer--open {
+  transform: translateX(0);
+}
+
+/* Cabeçalho do drawer */
+.mobile-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 18px;
+  border-bottom: 1px solid var(--cor-borda-suave);
+  flex-shrink: 0;
+}
+
+.mobile-drawer-title {
+  font-size: var(--font-lg);
+  font-weight: 700;
+  color: var(--cor-primaria);
+}
+
+.mobile-drawer-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: none;
+  font-size: var(--font-md);
+  color: var(--cor-texto-mutado);
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background-color 0.18s ease, color 0.18s ease;
+}
+
+.mobile-drawer-close:hover {
+  background-color: #f1f5f9;
+  color: var(--cor-texto);
+}
+
+/* Lista de itens do drawer */
+.mobile-nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 10px 0 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-nav-item {
+  width: 100%;
+}
+
+/* Link/Botão simples no drawer */
+.mobile-nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 13px 20px;
+  border: none;
+  background: none;
+  font-family: var(--font-family);
+  font-size: var(--font-base);
+  font-weight: 600;
+  color: var(--cor-texto);
+  text-decoration: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.18s ease, color 0.18s ease;
+  box-sizing: border-box;
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link--accordion:hover {
+  background-color: var(--cor-primaria-light);
+  color: var(--cor-primaria);
+}
+
+/* Chevron do acordeão mobile */
+.mobile-chevron {
+  font-size: 0.8rem;
+  transition: transform 0.25s ease;
+  display: inline-block;
+  line-height: 1;
+}
+
+.mobile-chevron.rotated {
+  transform: rotate(-180deg);
+}
+
+/* Submenu do acordeão */
+.mobile-submenu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: var(--cor-card-alt);
+  border-top: 1px solid var(--cor-borda-suave);
+  border-bottom: 1px solid var(--cor-borda-suave);
+  transition: background-color 0.3s ease;
+}
+
+.mobile-submenu-link {
+  display: block;
+  padding: 11px 28px;
+  font-size: var(--font-sm);
+  font-weight: 500;
+  color: var(--cor-texto-mutado);
+  text-decoration: none;
+  transition: background-color 0.15s ease, color 0.15s ease;
+  border-left: 3px solid transparent;
+}
+
+.mobile-submenu-link:hover {
+  background-color: var(--cor-primaria-light);
+  color: var(--cor-primaria);
+  border-left-color: var(--cor-primaria);
+}
+
+/* ================================================================
+   Media Queries progressivas (Mobile-First)
+   ================================================================ */
+
+/* Tablet / Desktop: exibe menu em linha, oculta hambúrguer */
+@media (min-width: 768px) {
+  .navbar-container {
+    padding: 0 24px;
+    justify-content: flex-start;
+  }
+
+  .navbar-desktop {
+    display: flex;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  /* Overlay e drawer não existem no desktop */
+  .drawer-overlay,
+  .mobile-drawer {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .nav-link {
+    padding: 10px 16px;
+    font-size: var(--font-base);
+  }
+
+  .dropdown-link {
+    font-size: var(--font-base);
+  }
+}

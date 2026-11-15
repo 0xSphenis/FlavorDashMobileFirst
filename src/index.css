@@ -1,0 +1,170 @@
+/* ============================================================
+   Design Tokens — FlavorDash
+   Mobile-First · Tipografia Fluida · Suporte a Dark Mode
+   ============================================================ */
+
+:root {
+  min-height: 100vh;
+
+  /* ── Paleta Modo Claro ─────────────────────────────────── */
+  --cor-fundo:          #edf2fa;
+  --cor-card:           #ffffff;
+  --cor-card-alt:       #f8fafc;
+  --cor-texto:          #1e242b;
+  --cor-texto-mutado:   #5a626a;
+  --cor-texto-suave:    #8a94a6;
+  --cor-primaria:       #0e6f33;
+  --cor-primaria-hover: #0b5928;
+  --cor-primaria-light: #e8f5ec;
+  --cor-primaria-dark:  #34d368;    /* primária mais clara para contraste em dark */
+  --cor-borda:          #d1d5db;
+  --cor-borda-suave:    #e5e7eb;
+  --cor-destaque:       #e4c295;
+  --cor-alerta:         #dc2626;
+  --cor-alerta-fundo:   #fef2f2;
+  --cor-alerta-borda:   #fecaca;
+  --cor-sucesso:        #52b788;
+  --cor-estrela:        #eab308;
+  --cor-estrela-fundo:  #fef08a;
+
+  /* Sombras dinâmicas */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.07);
+
+  /* ── Tipografia Fluida (clamp) ─────────────────────────── */
+  --font-xs:   clamp(0.72rem, 0.68rem + 0.2vw,  0.82rem);
+  --font-sm:   clamp(0.82rem, 0.78rem + 0.25vw, 0.92rem);
+  --font-base: clamp(0.92rem, 0.88rem + 0.3vw,  1.05rem);
+  --font-md:   clamp(1.05rem, 0.98rem + 0.4vw,  1.22rem);
+  --font-lg:   clamp(1.2rem,  1.1rem  + 0.6vw,  1.45rem);
+  --font-xl:   clamp(1.4rem,  1.25rem + 0.9vw,  1.85rem);
+  --font-2xl:  clamp(1.75rem, 1.5rem  + 1.4vw,  2.4rem);
+
+  /* ── Espaçamentos Fluidos ──────────────────────────────── */
+  --space-xs: clamp(4px,  1vw,   6px);
+  --space-sm: clamp(8px,  1.5vw, 12px);
+  --space-md: clamp(12px, 2vw,   18px);
+  --space-lg: clamp(16px, 2.5vw, 24px);
+  --space-xl: clamp(24px, 3.5vw, 36px);
+
+  /* ── Bordas ────────────────────────────────────────────── */
+  --radius-sm:   8px;
+  --radius-md:   12px;
+  --radius-lg:   20px;
+  --radius-xl:   24px;
+  --radius-pill: 999px;
+
+  /* ── Família tipográfica ───────────────────────────────── */
+  --font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  /* ── Transição global de tema ──────────────────────────── */
+  --theme-transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ================================================================
+   DARK MODE — Tokens sobrescritos
+   Ativado por:
+     1. classe "dark" no <html>  → JS toggle (prioridade maior)
+     2. prefers-color-scheme     → preferência do sistema (sem escolha manual)
+   ================================================================ */
+
+/* 1. Preferência do sistema operacional/navegador */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --cor-fundo:          #0f1117;
+    --cor-card:           #1a1f2e;
+    --cor-card-alt:       #131720;
+    --cor-texto:          #e8eaf0;
+    --cor-texto-mutado:   #9ca3af;
+    --cor-texto-suave:    #6b7280;
+    --cor-primaria:       #34d368;
+    --cor-primaria-hover: #2bbd5a;
+    --cor-primaria-light: #0a2a18;
+    --cor-borda:          #2e3447;
+    --cor-borda-suave:    #252b3b;
+    --cor-destaque:       #5a3e1a;
+    --cor-alerta:         #f87171;
+    --cor-alerta-fundo:   #2a1515;
+    --cor-alerta-borda:   #7f1d1d;
+    --cor-sucesso:        #4ade80;
+    --cor-estrela:        #fbbf24;
+    --cor-estrela-fundo:  #422006;
+
+    --shadow-sm: 0 2px 8px  rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* 2. Escolha manual do usuário via JS (sobrescreve a media query) */
+html.dark {
+  --cor-fundo:          #0f1117;
+  --cor-card:           #1a1f2e;
+  --cor-card-alt:       #131720;
+  --cor-texto:          #e8eaf0;
+  --cor-texto-mutado:   #9ca3af;
+  --cor-texto-suave:    #6b7280;
+  --cor-primaria:       #34d368;
+  --cor-primaria-hover: #2bbd5a;
+  --cor-primaria-light: #0a2a18;
+  --cor-borda:          #2e3447;
+  --cor-borda-suave:    #252b3b;
+  --cor-destaque:       #5a3e1a;
+  --cor-alerta:         #f87171;
+  --cor-alerta-fundo:   #2a1515;
+  --cor-alerta-borda:   #7f1d1d;
+  --cor-sucesso:        #4ade80;
+  --cor-estrela:        #fbbf24;
+  --cor-estrela-fundo:  #422006;
+
+  --shadow-sm: 0 2px 8px  rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+/* ── Reset & Base ─────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  /* Transição suave ao trocar de tema */
+  transition: var(--theme-transition);
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-base);
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  width: 100%;
+  transition: var(--theme-transition);
+}
+
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
